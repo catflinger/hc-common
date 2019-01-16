@@ -9,3 +9,7 @@ There are many off-the-shelf heating controllers available, I'm writing another 
 3. it is dangerous to igniore item 2 
 
 This package contains common items shared between the other HC packages: hc-server and hc-webclient.
+
+The module is intended to be used as a data model.  All the items exported from this module are intended
+to be immutable.  Typescript/Javascript only provide limited support for immutability, you have to be well
+behaved and not try and subvert this intention!
