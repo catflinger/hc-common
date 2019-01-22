@@ -74,7 +74,7 @@ export interface ISensorConfig {
     id: string;
     description: string;
     role: string;
-    deleted: boolean;
+    logPosition: number;
 }
 
 export interface IOverride {

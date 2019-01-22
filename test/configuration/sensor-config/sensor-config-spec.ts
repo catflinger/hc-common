@@ -12,25 +12,25 @@ describe("Sensor Config", () => {
                 id: "A",
                 description: "B",
                 role: "C",
-                deleted: true,
+                logPosition: 1,
             }); 
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("C");
-            expect(sc.deleted).to.equal(true);
+            expect(sc.logPosition).to.equal(1);
         });
         it("load with role missing", () => {
             let sc: SensorConfig = new SensorConfig({
                 id: "A",
                 description: "B",
-                deleted: true,
+                logPosition: NaN,
             }); 
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("");
-            expect(sc.deleted).to.equal(true);
+            expect(sc.logPosition).to.be.NaN;
         });
-        it("load with deleted missing", () => {
+        it("load with logPosition missing", () => {
             let sc: SensorConfig = new SensorConfig({
                 id: "A",
                 description: "B",
@@ -39,7 +39,7 @@ describe("Sensor Config", () => {
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("C");
-            expect(sc.deleted).to.equal(false);
+            expect(sc.logPosition).to.be.NaN;
         });
     });
     
