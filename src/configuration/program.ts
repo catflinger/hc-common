@@ -5,6 +5,7 @@ import { IProgram, IRule } from "../interfaces";
 import { BasicHeatingRule } from "./basic-heating-rule";
 
 export class Program implements IProgram {
+    public tag: any = undefined;
     public readonly id: string;
     public readonly name: string;
     public readonly minHwTemp: number;
@@ -39,6 +40,15 @@ export class Program implements IProgram {
                 throw new Error("invalid config: datedConfig not an array");
             }
         }
+    }
+
+    public toJSON(): any {
+        return {
+            id: this.id,
+            maxHwTemp: this.maxHwTemp,
+            minHwTemp: this.minHwTemp,
+            name: this.name,
+        };
     }
 
     public getRules(): ReadonlyArray<IRule> {

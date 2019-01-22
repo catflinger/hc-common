@@ -2,6 +2,7 @@ import { ConfigValidation } from "../config-validation";
 import { INamedConfig } from "../interfaces";
 
 export class NamedConfig implements INamedConfig {
+    public tag: any = undefined;
     public readonly weekdayProgramId: string;
     public readonly saturdayProgramId: string;
     public readonly sundayProgramId: string;
@@ -18,6 +19,14 @@ export class NamedConfig implements INamedConfig {
         this.sundayProgramId = isPresent(data.sundayProgramId) ?
             ConfigValidation.getString(data.sundayProgramId, "namedConfig:sundayProgramId", null) :
             "";
+    }
+
+    public toJSON(): any {
+        return {
+            saturdayProgramId: this.saturdayProgramId,
+            sundayProgramId: this.sundayProgramId,
+            weekdayProgramId: this.weekdayProgramId,
+        };
     }
 }
 

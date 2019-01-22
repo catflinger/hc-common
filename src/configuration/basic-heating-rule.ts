@@ -7,6 +7,7 @@ import { TimeOfDay } from "./time-of-day";
 /* Base class for implementing rules */
 
 export class BasicHeatingRule implements IRule {
+    public tag: any = undefined;
     public readonly id: string;
     public readonly startTime: ITimeOfDay;
     public readonly endTime: ITimeOfDay;
@@ -27,6 +28,14 @@ export class BasicHeatingRule implements IRule {
         } else {
             throw new Error("endTime not found in rule config");
         }
+    }
+
+    public toJSON(): any {
+        return {
+            endTime: this.endTime,
+            id: this.id,
+            startTime: this.startTime,
+        };
     }
 
     public applyRule(currentState: IControlState, readings: ReadonlyArray<IReading>, time: ITimeOfDay | Date): IRuleResult {

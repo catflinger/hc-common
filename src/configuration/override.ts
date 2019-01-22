@@ -2,6 +2,7 @@ import { v4 as uuid } from "uuid";
 import { IOverride, IRule } from "../interfaces";
 
 export class Override implements IOverride {
+    public tag: any = undefined;
     public readonly rule: IRule;
     public readonly id: string;
     public readonly date: Date;
@@ -10,5 +11,13 @@ export class Override implements IOverride {
         this.id = uuid();
         this.date = date;
         this.rule = rule;
+    }
+
+    public toJSON(): any {
+        return {
+            date: this.date,
+            id: this.id,
+            rule: this.rule,
+        };
     }
 }

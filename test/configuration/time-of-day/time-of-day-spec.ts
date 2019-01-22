@@ -165,7 +165,8 @@ const goodData1 = {
 
 const goodData2 = {
     hour: 12,
-    minute: 31
+    minute: 31,
+    second: 0,
 }
 
 let todA: TimeOfDay = new TimeOfDay({
