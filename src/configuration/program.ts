@@ -5,7 +5,6 @@ import { IProgram, IRule } from "../interfaces";
 import { BasicHeatingRule } from "./basic-heating-rule";
 
 export class Program implements IProgram {
-    public tag: any = undefined;
     public readonly id: string;
     public readonly name: string;
     public readonly minHwTemp: number;
@@ -48,6 +47,7 @@ export class Program implements IProgram {
             maxHwTemp: this.maxHwTemp,
             minHwTemp: this.minHwTemp,
             name: this.name,
+            rules: this.rules,
         };
     }
 

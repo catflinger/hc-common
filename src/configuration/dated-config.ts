@@ -2,7 +2,6 @@ import { ConfigValidation } from "../config-validation";
 import { IDatedConfig } from "../interfaces";
 
 export class DatedConfig implements IDatedConfig {
-    public tag: any = undefined;
     public readonly programId: string;
     public readonly date: Date;
 

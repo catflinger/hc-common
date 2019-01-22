@@ -5,7 +5,6 @@ import { Program } from "./program";
 import { SensorConfig } from "./sensor-config";
 
 export class Configuration implements IConfiguration {
-    public tag: any = undefined;
     private programConfig: IProgram[] = [];
     private sensorConfig: ISensorConfig[] = [];
     private datedConfig: IDatedConfig[] = [];

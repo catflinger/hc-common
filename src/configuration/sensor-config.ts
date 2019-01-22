@@ -2,7 +2,6 @@ import { ConfigValidation } from "../config-validation";
 import { ISensorConfig } from "../interfaces";
 
 export class SensorConfig implements ISensorConfig {
-    public tag: any = undefined;
     public readonly id: string;
     public readonly description: string;
     public readonly role: string;

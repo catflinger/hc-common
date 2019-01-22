@@ -7,7 +7,6 @@ import { TimeOfDay } from "./time-of-day";
 /* Base class for implementing rules */
 
 export class BasicHeatingRule implements IRule {
-    public tag: any = undefined;
     public readonly id: string;
     public readonly startTime: ITimeOfDay;
     public readonly endTime: ITimeOfDay;

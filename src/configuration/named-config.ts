@@ -2,7 +2,6 @@ import { ConfigValidation } from "../config-validation";
 import { INamedConfig } from "../interfaces";
 
 export class NamedConfig implements INamedConfig {
-    public tag: any = undefined;
     public readonly weekdayProgramId: string;
     public readonly saturdayProgramId: string;
     public readonly sundayProgramId: string;
