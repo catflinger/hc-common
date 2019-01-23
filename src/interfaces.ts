@@ -44,13 +44,6 @@ export interface IControlState {
     hotWater: boolean;
 }
 
-export interface IReading {
-    id: string;
-    description: string;
-    role: string;
-    value: number;
-}
-
 export interface IConfiguration {
     getProgramConfig(): ReadonlyArray<IProgram>;
     getNamedConfig(): INamedConfig;
@@ -70,12 +63,16 @@ export interface IDatedConfig {
     date: Date;
 }
 
+// the data required for senor configuration and the data required for displaying readings
+// is almost identical.  The same interface is used for both
 export interface ISensorConfig {
     id: string;
     description: string;
     role: string;
     logPosition: number;
+    reading: number;
 }
+export type IReading = ISensorConfig;
 
 export interface IOverride {
     readonly id: string;

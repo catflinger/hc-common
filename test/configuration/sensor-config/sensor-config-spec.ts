@@ -39,7 +39,7 @@ describe("Sensor Config", () => {
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("C");
-            expect(sc.logPosition).to.be.NaN;
+            expect(sc.logPosition).to.be.null;
         });
     });
     
