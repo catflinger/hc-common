@@ -15,12 +15,8 @@ describe("Program", () => {
             expect(p.maxHwTemp).to.equal(30);
             expect(p.minHwTemp).to.equal(12);
         });
-        it ("should load with no id specified", () => {
-            let p: Program = new Program(goodDataNoId); 
-            expect(p.id.length).to.equal(36);
-            expect(p.name).to.equal("dean");
-            expect(p.maxHwTemp).to.equal(30);
-            expect(p.minHwTemp).to.equal(12);
+        it ("should fail to load with no id specified", () => {
+            expect(() => new Program(goodDataNoId)).to.throw; 
         });
         it ("should load with rules specified", () => {
             let p: Program = new Program(goodDataWithRules); 

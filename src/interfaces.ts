@@ -14,7 +14,7 @@ export interface IRule {
     id: string;
     startTime: ITimeOfDay;
     endTime: ITimeOfDay;
-    applyRule(currentState: IControlState, readings: ReadonlyArray<IReading>, time: ITimeOfDay | Date): IRuleResult;
+    applyRule(currentState: IControlState, readings: ReadonlyArray<ISensorReading>, time: ITimeOfDay | Date): IRuleResult;
 }
 
 export interface IRuleResult {
@@ -72,7 +72,7 @@ export interface ISensorConfig {
     logPosition: number;
     reading: number;
 }
-export type IReading = ISensorConfig;
+export type ISensorReading = ISensorConfig;
 
 export interface IOverride {
     readonly id: string;

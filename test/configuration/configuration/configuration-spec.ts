@@ -52,11 +52,13 @@ const goodData: any = {
     ],
     programConfig: [
         {
+            id: "X",
             name: "P1",
             minHwTemp: 12,
             maxHwTemp: 30
         },
         {
+            id: "Y",
             name: "P2",
             minHwTemp: 12,
             maxHwTemp: 30
