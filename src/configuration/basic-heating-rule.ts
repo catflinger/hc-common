@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 
 import { ConfigValidation } from "../config-validation";
-import { IControlState, ISensorReading, IRule, IRuleResult, ITimeOfDay } from "../interfaces";
+import { IControlState, IRule, IRuleResult, ISensorReading, ITimeOfDay } from "../interfaces";
 import { TimeOfDay } from "./time-of-day";
 
 /* Base class for implementing rules */
