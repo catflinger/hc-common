@@ -69,7 +69,6 @@ export interface ISensorConfig {
     id: string;
     description: string;
     role: string;
-    logPosition: number;
     reading: number;
 }
 export type ISensorReading = ISensorConfig;

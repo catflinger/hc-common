@@ -17,7 +17,6 @@ describe("Sensor Config", () => {
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("C");
-            expect(sc.logPosition).to.equal(1);
         });
         it("load with role missing", () => {
             let sc: SensorConfig = new SensorConfig({
@@ -28,18 +27,6 @@ describe("Sensor Config", () => {
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("");
-            expect(sc.logPosition).to.be.NaN;
-        });
-        it("load with logPosition missing", () => {
-            let sc: SensorConfig = new SensorConfig({
-                id: "A",
-                description: "B",
-                role: "C",
-            }); 
-            expect(sc.id).to.equal("A");
-            expect(sc.description).to.equal("B");
-            expect(sc.role).to.equal("C");
-            expect(sc.logPosition).to.be.null;
         });
     });
     
