@@ -11,10 +11,12 @@ export class LogEntry implements ILogEntry {
         this.date = ConfigValidation.getDate(data.date, "LogEntry.date");
         this.heating = ConfigValidation.getBoolean(data.heating, "LogEntry.heating");
         this.hotWater = ConfigValidation.getBoolean(data.hotWater, "LogEntry.hotWater");
-        const readings = [];
+        const readings: number[] = [];
 
         data.readings.forEach((reading: any) => {
             readings.push(ConfigValidation.getNumber(reading, "LogEntry.readings"));
         });
+
+        this.readings = readings;
     }
 }
