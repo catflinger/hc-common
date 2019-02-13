@@ -121,12 +121,12 @@ export interface IConfigApiResponse {
 
 export interface IOverrideApiResponse {
     date: Date;
-    overrides: IOverride[];
+    overrides: ReadonlyArray<IOverride>;
 }
 
 export interface ISensorApiResponse {
     date: Date;
-    sensors: ISensorReading[];
+    sensors: ReadonlyArray<ISensorReading>;
 }
 export interface ILogApiResponse {
     date: Date;
