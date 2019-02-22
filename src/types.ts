@@ -1,7 +1,6 @@
 import { ConfigValidation as StaticConfigValidation } from "./config-validation";
 import { IConfigValidation } from "./interfaces";
 
-export * from "./configuration/basic-heating-rule";
 export * from "./configuration/configuration";
 export * from "./configuration/dated-config";
 export * from "./configuration/named-config";

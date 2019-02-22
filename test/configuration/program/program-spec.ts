@@ -100,6 +100,7 @@ const goodDataWithRules = {
     maxHwTemp: 30,
     rules:[
         {
+            kind: "BasicHeatingRule",
             startTime: {
                 hour: 10,
                 minute: 10,
@@ -112,6 +113,7 @@ const goodDataWithRules = {
             }
         },
         {
+            kind: "BasicHeatingRule",
             startTime: {
                 hour: 12,
                 minute: 12,
