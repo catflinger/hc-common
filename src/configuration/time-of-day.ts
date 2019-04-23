@@ -99,7 +99,7 @@ export class TimeOfDay implements ITimeOfDay {
 
     public justBefore(): ITimeOfDay {
         let seconds: number = this.toSeconds();
-        
+
         if (seconds > 0) {
             seconds = seconds - 1;
         }

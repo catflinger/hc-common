@@ -1,15 +1,20 @@
-import { ITimeOfYear } from "../interfaces";
 import { ConfigValidation } from "../config-validation";
+import { ITimeOfYear } from "../interfaces";
 
 export class TimeOfYear implements ITimeOfYear {
+
+    public static fromDate(date: Date): ITimeOfYear {
+        return new TimeOfYear({month: date.getMonth() + 1, day: date.getDate()});
+    }
+
     public readonly month: number;
     public readonly day: number;
 
-    constructor(month: number, day: number) {
-        this.day = ConfigValidation.getNumber(day, "TimeOfYear: day");
-        this.month = ConfigValidation.getNumber(month, "TimeOfYear: month");
+    constructor(data: {month: number, day: number}) {
+        this.day = ConfigValidation.getNumber(data.day, "TimeOfYear: day");
+        this.month = ConfigValidation.getNumber(data.month, "TimeOfYear: month");
 
-        if (this.month !== Math.trunc(month) || this.day !== Math.trunc(day)) {
+        if (this.month !== Math.trunc(data.month) || this.day !== Math.trunc(data.day)) {
             throw new Error("TimeOfYear: day and month must be integers");
         }
 

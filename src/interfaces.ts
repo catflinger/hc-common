@@ -1,3 +1,5 @@
+import { TimeOfYear } from "./configuration/time-of-year";
+
 /*
 All these interfaces are intended for use with immutable classes.
 */
@@ -84,7 +86,7 @@ type INamedConfigM = INamedConfig;
 
 export interface IDatedConfig {
     programId: string;
-    date: Date;
+    timeOfYear: TimeOfYear;
 }
 
 // interface for the mutable version of dated config

@@ -8,13 +8,13 @@ const expect = chai.expect;
 describe("Dated Config", () => {
 
     it("should load with valid data", () => {
-        let date: Date = new Date("2018-12-23T12:13:14"); 
         let dc: DatedConfig = new DatedConfig({
             programId: "A",
-            date: date.toISOString(),
+            timeOfYear: { month: 2, day: 8 },
         }); 
         expect(dc.programId).to.equal("A");
-        expect(dc.date.toISOString()).to.equal(date.toISOString());
+        expect(dc.timeOfYear.month).to.equal(2);
+        expect(dc.timeOfYear.day).to.equal(8);
     });
     it("should fail to load with invalid data", () => {
         expect(() => { new DatedConfig({})}).to.throw;
