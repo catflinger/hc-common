@@ -47,6 +47,11 @@ export interface ITimeOfDay {
     justBefore(): ITimeOfDay;
 }
 
+export interface ITimeOfYear {
+    month: number;
+    day: number;
+}
+
 export interface IControlState {
     heating: boolean;
     hotWater: boolean;
@@ -62,7 +67,7 @@ export interface IConfiguration {
 
 // interface for the mutable version of Program
 export interface IConfigurationM {
-    datedConfig: IDatedConfigM;
+    datedConfig: IDatedConfigM[];
     namedConfig: INamedConfigM;
     programConfig: IProgramM [];
     sensorConfig: ISensorConfigM [];
