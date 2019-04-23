@@ -58,5 +58,19 @@ describe("Time Of Year", () => {
                 expect(t.isToday(new Date("2017-07-23T13:14:15"))).to.be.false;
             });
         });
+
+        describe("isSameAs", () => {
+            it(" should recogise same day", () => {
+                let t1 = TimeOfYear.fromDate(new Date("2017-07-22T12:12:12"));
+                let t2 = TimeOfYear.fromDate(new Date("2018-07-22T13:14:15"));
+                expect(t1.isSameAs(t2)).to.be.true;
+            });
+            it(" should not recogise tomorrow", () => {
+                let t1 = TimeOfYear.fromDate(new Date("2017-07-22T12:12:12"));
+                let t2 = TimeOfYear.fromDate(new Date("2018-07-21T13:14:15"));
+                expect(t1.isSameAs(t2)).to.be.false;
+            });
+        });
+
     });
 });
