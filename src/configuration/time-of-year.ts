@@ -27,4 +27,8 @@ export class TimeOfYear implements ITimeOfYear {
             throw new Error("TimeOfYear: day out of bounds");
         }
     }
+
+    public isToday(date: Date): boolean {
+        return this.month === date.getMonth() + 1 && this.day === date.getDate();
+    }
 }

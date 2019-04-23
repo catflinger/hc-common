@@ -52,6 +52,8 @@ export interface ITimeOfDay {
 export interface ITimeOfYear {
     month: number;
     day: number;
+
+    isToday(date: Date): boolean;
 }
 
 export interface IControlState {
