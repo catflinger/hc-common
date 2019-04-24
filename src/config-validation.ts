@@ -10,9 +10,9 @@ export class ConfigValidation {
         return getValue("string", val, message, defaultValue);
     }
 
-    public static getRoleType(val: any, message: string, defaultValue?: string): RoleType {
+    public static getRoleType(val: any, message: string, defaultValue?: RoleType): RoleType {
         const role = this.getString(val, message, defaultValue);
-        if (role !== "none" && role !== "hw" && role !== "bedroom") {
+        if (role !== "" && role !== "hw" && role !== "bedroom") {
             throw new Error(`Config validation, ${message} is not a valid role type`);
         }
         return role;

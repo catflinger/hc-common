@@ -63,11 +63,10 @@ describe("Config Validation", () => {
 
     describe("getRoleType", () => {
         it("should validate without defaultValue", () => {
-            expect(ConfigValidation.getRoleType("none", "A")).to.equal("none");
             expect(ConfigValidation.getRoleType("hw", "A")).to.equal("hw");
             expect(ConfigValidation.getRoleType("bedroom", "A")).to.equal("bedroom");
+            expect(ConfigValidation.getRoleType("", "A")).to.equal("");
             
-            expect(() => ConfigValidation.getRoleType("", "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getRoleType("freddy", "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getRoleType(undefined, "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getRoleType(null, "ABC")).to.throw(/ABC/);
