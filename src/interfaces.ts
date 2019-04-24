@@ -3,7 +3,7 @@ import { TimeOfYear } from "./configuration/time-of-year";
 /*
 All these interfaces are intended for use with immutable classes.
 */
-export type RuleType = "BasicHeatingRule" | "AnotherRuleType...";
+export type RuleType = "BasicHeatingRule" | "ThermoHeatingRule";
 
 export interface IProgram {
     id: string;
@@ -30,6 +30,11 @@ export interface IRuleConfig {
     endTime: ITimeOfDay;
 }
 
+export interface IThermoHeatingRuleConfig {
+    sensorId: string;
+    max: number;
+    min: number;
+}
 export interface ITimeOfDay {
     hour: number;
     minute: number;

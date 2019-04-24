@@ -2,6 +2,7 @@ import { v4 as uuid } from "uuid";
 
 import { ConfigValidation } from "../config-validation";
 import { IRuleConfig, ITimeOfDay, RuleType } from "../interfaces";
+import { ThermoHeatingRuleConfig } from "./thermo-heating-rule-config";
 import { TimeOfDay } from "./time-of-day";
 
 /* Base class for implementing rules */
@@ -20,13 +21,19 @@ export class RuleConfig implements IRuleConfig {
 
         // TO DO: make this iterate over the types somehow
         const kind: string = ConfigValidation.getString(data.kind, "RuleConfig:kind");
-        if (kind === "BasicHeatingRule") {
-            this.kind = kind;
-        } else {
-            throw new Error("invalid rule type");
-        }
 
-        this.data = data.data;
+        switch (kind) {
+            case "BasicHeatingRule":
+                this.kind = kind;
+                this.data = null;
+                break;
+            case "ThermoHeatingRule":
+                this.kind = kind;
+                this.data = new ThermoHeatingRuleConfig(data);
+                break;
+            default:
+                throw new Error("invalid rule type");
+        }
 
         if (data.startTime) {
             this.startTime = new TimeOfDay(data.startTime);
