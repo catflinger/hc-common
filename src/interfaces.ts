@@ -4,6 +4,7 @@ import { TimeOfYear } from "./configuration/time-of-year";
 All these interfaces are intended for use with immutable classes.
 */
 export type RuleType = "BasicHeatingRule" | "ThermoHeatingRule";
+export type RoleType = "none" | "hw" | "bedroom";
 
 export interface IProgram {
     id: string;
@@ -31,7 +32,7 @@ export interface IRuleConfig {
 }
 
 export interface IThermoHeatingRuleConfig {
-    sensorId: string;
+    role: RoleType;
     max: number;
     min: number;
 }

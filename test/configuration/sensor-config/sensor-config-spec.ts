@@ -11,22 +11,17 @@ describe("Sensor Config", () => {
             let sc: SensorConfig = new SensorConfig({
                 id: "A",
                 description: "B",
-                role: "C",
-                logPosition: 1,
+                role: "hw",
             }); 
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
-            expect(sc.role).to.equal("C");
+            expect(sc.role).to.equal("hw");
         });
-        it("load with role missing", () => {
-            let sc: SensorConfig = new SensorConfig({
+        it("should not load with role missing", () => {
+            expect(() => new SensorConfig({
                 id: "A",
                 description: "B",
-                logPosition: NaN,
-            }); 
-            expect(sc.id).to.equal("A");
-            expect(sc.description).to.equal("B");
-            expect(sc.role).to.equal("");
+            })).to.throw; 
         });
     });
     

@@ -1,13 +1,13 @@
 import { ConfigValidation } from "../config-validation";
-import { IThermoHeatingRuleConfig } from "../interfaces";
+import { IThermoHeatingRuleConfig, RoleType } from "../interfaces";
 
 export class ThermoHeatingRuleConfig implements IThermoHeatingRuleConfig {
-    public readonly sensorId: string;
+    public readonly role: RoleType;
     public readonly max: number;
     public readonly min: number;
 
     constructor(data: any) {
-        this.sensorId = ConfigValidation.getString(data.sensorId, "ThermoHeatingRuleConfig:sensorId");
+        this.role = ConfigValidation.getRoleType(data.role, "ThermoHeatingRuleConfig:role");
         this.max = ConfigValidation.getNumber(data.max, "ThermoHeatingRuleConfig:max");
         this.min = ConfigValidation.getNumber(data.min, "ThermoHeatingRuleConfig:min");
     }

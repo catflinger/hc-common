@@ -75,10 +75,12 @@ const goodData: any = {
         {
             id: "A",
             description: "B",
+            role: "none",
         },
         {
             id: "C",
             description: "D",
-        }    
+            role: "none",
+        }
     ],
 };
