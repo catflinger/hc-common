@@ -26,10 +26,9 @@ export interface IRuleConfig {
     id: string;
     startTime: ITimeOfDay;
     endTime: ITimeOfDay;
-    
+
     role?: RoleType;
-    max?: number;
-    min?: number;
+    temp?: number;
 }
 
 export interface ITimeOfDay {
