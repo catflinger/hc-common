@@ -3,7 +3,7 @@ import { TimeOfYear } from "./configuration/time-of-year";
 /*
 All these interfaces are intended for use with immutable classes.
 */
-export type RoleType = "" | "hw" | "bedroom";
+export type RoleType = "hw" | "bedroom";
 
 export interface IProgram {
     id: string;
