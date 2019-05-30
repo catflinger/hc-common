@@ -1,5 +1,3 @@
-import { TimeOfYear } from "./configuration/time-of-year";
-
 /*
 All these interfaces are intended for use with immutable classes.
 */
@@ -11,6 +9,7 @@ export interface IProgram {
     minHwTemp: number;
     maxHwTemp: number;
     getRules(): ReadonlyArray<IRuleConfig>;
+    toMutable(): IProgramM;
 }
 
 // interface for the mutable version of Program

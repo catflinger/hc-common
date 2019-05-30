@@ -2,6 +2,7 @@ import "mocha";
 import * as chai from "chai";
 
 import { Program } from "../../../src/configuration/program";
+import { IProgramM } from "../../../src/interfaces";
 
 const expect = chai.expect;
 
@@ -80,6 +81,19 @@ describe("Program", () => {
         expect(() => { new Program(data)}).not.to.throw;
     });
 
+});
+
+it("should produce a mutable copy", () => {
+    let p: Program = new Program(goodDataWithRules);
+    let m: IProgramM = p.toMutable();
+
+    expect(m.id).to.equal("james");
+    expect(m.name).to.equal("dean");
+    expect(m.maxHwTemp).to.equal(30);
+    expect(m.minHwTemp).to.equal(12);
+    expect(m.rules.length).to.equal(2);
+    expect(m.rules[0].startTime.hour).to.equal(10);
+    expect(m.rules[1].startTime.hour).to.equal(12);
 });
 
 const goodDataNoId = {
