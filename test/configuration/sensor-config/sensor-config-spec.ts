@@ -12,10 +12,12 @@ describe("Sensor Config", () => {
                 id: "A",
                 description: "B",
                 role: "hw",
+                displayColor: "green",
             }); 
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("hw");
+            expect(sc.displayColor).to.equal("green");
         });
         it("should not load with role missing", () => {
             expect(() => new SensorConfig({
@@ -25,7 +27,7 @@ describe("Sensor Config", () => {
         });
     });
     
-    it("should fail to load with invalid data", () => {
+    it("should fail to load with no data", () => {
         expect(() => { new SensorConfig({})}).to.throw;
         expect(() => { new SensorConfig(undefined)}).to.throw;
     });
