@@ -13,11 +13,13 @@ describe("Sensor Config", () => {
                 description: "B",
                 role: "hw",
                 displayColor: "green",
+                displayOrder: 21,
             }); 
             expect(sc.id).to.equal("A");
             expect(sc.description).to.equal("B");
             expect(sc.role).to.equal("hw");
             expect(sc.displayColor).to.equal("green");
+            expect(sc.displayOrder).to.equal(21);
         });
         it("should not load with role missing", () => {
             expect(() => new SensorConfig({
