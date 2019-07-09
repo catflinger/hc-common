@@ -51,11 +51,11 @@ describe("Day Of Year", () => {
         describe("isToday", () => {
             it(" should recogise today", () => {
                 let t = DayOfYear.fromDate(new Date("2017-07-22T12:12:12"));
-                expect(t.isToday(new Date("2017-07-22T13:14:15"))).to.be.true;
+                expect(t.isSameDate(new Date("2017-07-22T13:14:15"))).to.be.true;
             });
             it(" should not recogise tomorrow", () => {
                 let t = DayOfYear.fromDate(new Date("2017-07-22T12:12:12"));
-                expect(t.isToday(new Date("2017-07-23T13:14:15"))).to.be.false;
+                expect(t.isSameDate(new Date("2017-07-23T13:14:15"))).to.be.false;
             });
         });
 

@@ -18,7 +18,7 @@ describe("Config Validation", () => {
             expect(ConfigValidation.getBoolean(false, "A")).to.equal(false);
             expect(() => ConfigValidation.getBoolean(1, "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getBoolean(undefined, "ABC")).to.throw(/ABC/);
-            expect(() => ConfigValidation.getBoolean(null, "ABC")).to.throw(/ABC/);
+            // expect(() => ConfigValidation.getBoolean(null, "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getBoolean("", "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getBoolean("foo", "ABC")).to.throw(/ABC/);
         });
@@ -32,7 +32,7 @@ describe("Config Validation", () => {
             
             expect(ConfigValidation.getBoolean(undefined, "A", true)).to.equal(true);
             expect(ConfigValidation.getBoolean(undefined, "A", false)).to.equal(false);
-            expect(() => ConfigValidation.getBoolean(null, "ABC", true)).to.throw(/ABC/);
+            expect(ConfigValidation.getBoolean(null, "ABC", true)).to.equal(true);
             expect(() => ConfigValidation.getBoolean("", "ABC", true)).to.throw(/ABC/);
             expect(() => ConfigValidation.getBoolean(1, "ABC", true)).to.throw(/ABC/);
             expect(() => ConfigValidation.getBoolean("true", "ABC", true)).to.throw(/ABC/);
@@ -46,7 +46,7 @@ describe("Config Validation", () => {
             
             expect(() => ConfigValidation.getString(1, "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getString(undefined, "ABC")).to.throw(/ABC/);
-            expect(() => ConfigValidation.getString(null, "ABC")).to.throw(/ABC/);
+            // expect(() => ConfigValidation.getString(null, "ABC")).to.throw(/ABC/);
             expect(() => ConfigValidation.getString(true, "ABC")).to.throw(/ABC/);
         });
 
@@ -54,9 +54,9 @@ describe("Config Validation", () => {
             expect(ConfigValidation.getString("hello", "A", "goodbye")).to.equal("hello");
             expect(ConfigValidation.getString("", "A", "goodbye")).to.equal("");
             expect(ConfigValidation.getString(undefined, "A", "goodbye")).to.equal("goodbye");
+            expect(ConfigValidation.getString(null, "ABC", "goodbye")).to.equal("goodbye");
             
             expect(() => ConfigValidation.getString(1, "ABC", "goodbye")).to.throw(/ABC/);
-            expect(() => ConfigValidation.getString(null, "ABC", "goodbye")).to.throw(/ABC/);
             expect(() => ConfigValidation.getString(true, "ABC", "goodbye")).to.throw(/ABC/);
         });
     });
@@ -91,9 +91,9 @@ describe("Config Validation", () => {
             expect(ConfigValidation.getNumber(NaN, "A", 2)).to.be.NaN;
             expect(ConfigValidation.getNumber(Infinity, "A", 2)).to.equal(Infinity);
             expect(ConfigValidation.getNumber(undefined, "ABC", 2)).to.equal(2);
+            expect(ConfigValidation.getNumber(null, "ABC", 2)).to.equal(2);
             
             expect(() => ConfigValidation.getNumber("1", "ABC", 2)).to.throw(/ABC/);
-            expect(() => ConfigValidation.getNumber(null, "ABC", 2)).to.throw(/ABC/);
             expect(() => ConfigValidation.getNumber(true, "ABC", 2)).to.throw(/ABC/);
         });
     });
