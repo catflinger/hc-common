@@ -37,12 +37,12 @@ describe("Configuration", () => {
         expect(m.datedConfig.length).to.equal(2);
 
         expect(m.datedConfig[0].programId).to.equal("X");
-        expect(m.datedConfig[0].timeOfYear.month).to.equal(8);
-        expect(m.datedConfig[0].timeOfYear.day).to.equal(4);
+        expect(m.datedConfig[0].dayOfYear.month).to.equal(8);
+        expect(m.datedConfig[0].dayOfYear.day).to.equal(4);
 
         expect(m.datedConfig[1].programId).to.equal("Y");
-        expect(m.datedConfig[1].timeOfYear.month).to.equal(1);
-        expect(m.datedConfig[1].timeOfYear.day).to.equal(31);
+        expect(m.datedConfig[1].dayOfYear.month).to.equal(1);
+        expect(m.datedConfig[1].dayOfYear.day).to.equal(31);
 
         expect(m.programConfig.length).to.equal(2);
 
@@ -87,14 +87,16 @@ const goodData: any = {
     datedConfig: [
         {
             programId: "X",
-            timeOfYear: {
+            dayOfYear: {
+                year: 2019,
                 month: 8,
                 day: 4
             }
         },
         {
             programId: "Y",
-            timeOfYear: {
+            dayOfYear: {
+                year: 2019,
                 month: 1,
                 day: 31
             }

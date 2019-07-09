@@ -55,15 +55,13 @@ function getMinimalData(): any {
 }
 
 const minimalData: any = {
-    from: "2019-12-13T12:00:00",
-    to: "2019-12-13T12:11:00",
+    dayOfYear: { year: 2017, day: 13, month: 12},
     sensors: [],
     entries: [],
 }
 
 const fullData: any = {
-    from: "2019-12-13T12:00:00",
-    to: "2019-12-13T12:11:00",
+    dayOfYear: { year: 2017, day: 13, month: 12},
     sensors: ["12", "13"],
     entries: [ 
         { 
